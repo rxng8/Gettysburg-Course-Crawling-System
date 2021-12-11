@@ -1,5 +1,4 @@
-"""
-    @file generator.py
+""" @file generator.py
     @author Alex Nguyen and Ben Durham
 
     This file contains every Generator classes and methods.
@@ -16,32 +15,38 @@ import pandas as pd
 import bs4
 import requests
 import json
-from extractor import PolicyExtractor, CourseExtractor
-from explorer import CourseExplorer
+from .extractor import PolicyExtractor, CourseExtractor, FacultyExtractor
+from .explorer import CourseExplorer
 
 class Generator:
+    """ Generator class
     """
-    Generator class
-    """
+
     def __init__(self, courseExtractor: CourseExtractor,\
             policyExtractor: PolicyExtractor,\
+            facultyExtractor: FacultyExtractor,\
             coursesExplorer: CourseExplorer):
-        """
+        """ description
         Args:
             courseExtractor (CourseExtractor): [description]
             policyExtractor (PolicyExtractor, optional): [description]. Defaults to None.
+            facultyExtractor (FacultyExtractor): [description]
+            coursesExplorer (CourseExplorer): [description]
         """
         # self.scraper = scraper
         self.pE = policyExtractor
         self.cE = courseExtractor
+        self.fE = facultyExtractor
         self.c_explore = coursesExplorer
     
     def gen_subject(self, subject: Dict):
         """ Generate a single subject
+
         Args:
             subject (Dict): the dictionary of the subject to be generated
+
         Returns:
-            (str): html string
+            str: html string
         """
         if "Subject" not in subject.keys():
             print("No subject to be found!")
@@ -98,8 +103,8 @@ Program Description
             (str): The whole html string of every subjects
         """
         string = """"""
-        for subject in self.cE.data:
-            string += self.gen_subject(subject)
+        for k, v in self.cE.data.items():
+            string += self.gen_subject(v)
         return string
 
     def gen_course(self, info: Dict) -> str:
@@ -133,9 +138,11 @@ Program Description
         return string
 
     def gen_all_courses(self, course_list: List) -> str:
-        """
+        """ description
+
         Args:
             course_list (List): list of course, each course is a dictionary
+
         Returns:
             str: html string of all courses in one subject
         """
@@ -145,17 +152,27 @@ Program Description
         return string
     
     def gen_id_from_title(self, title):
+        """[summary]
+
+        Args:
+            title ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
         elem_id_no_spec_chars = title.replace("&", "").replace(",", "")
         elem_id = " ".join(elem_id_no_spec_chars.split()).lower().replace(" ", "-")
         return elem_id
 
 
     def gen_policy(self, info: Dict):
-        """
+        """ description
+
         Args:
             info (Dict): the dictionary containing policy information
-        Return:
-            (str): The html string for a single policy
+
+        Returns:
+            str: The html string for a single policy
         """
         elem_id = self.gen_id_from_title(info['Title'])
         string = f"""
@@ -167,9 +184,10 @@ Program Description
         return string
 
     def gen_all_policies(self):
-        """
-        Return:
-            (str): The html string of all policies
+        """ description
+
+        Returns:
+            str: The html string of all policies
         """
         academic_policies = ""
         admissions_policies = ""
@@ -192,12 +210,14 @@ Program Description
         return content
 
     def gen_policies_of_type_toc(self, type):
-        """
-        Given a type of policy (i.e. Academic, Financial, Admissions)
+        """ Given a type of policy (i.e. Academic, Financial, Admissions)
         generates the TOC for that type
         
-        Return:
-            (str): The html toc of the given policy type
+        Args:
+            type ([type]): description
+
+        Returns:
+            str: The html toc of the given policy type
         """
         content = ''
         for policy in self.pE.data:
@@ -207,18 +227,22 @@ Program Description
         return content
 
     def gen_dept_toc(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         content = ''
-        for subject in self.cE.data:
+        for key, subject in self.cE.data.items():
             elem_id = self.gen_id_from_title(subject["Subject"])
             content += f'<li><a href="#{elem_id}">{subject["Subject"]}</a></li>'
         return content
 
     def generate_toc(self):
-        """
-        Generates the table of contents
+        """ Generates the table of contents
 
-        Return:
-            (str): The html table of contents
+        Returns:
+            str: The html table of contents
         """
         content = """
             <h2 id="toc">Table of Contents</h2>
@@ -252,19 +276,51 @@ Program Description
         content += """
                     </ol>
                 </li>
+                <li><a href="#faculty-registry">Faculty Registry</a>
+                    <ol>
+                        <li><a href="#emeriti-faculty">Emeriti Faculty</a></li>
+                        <li><a href="#current-faculty">Current Faculty</a></li>
+                        <li><a href="#others-holding-faculty-rank">Others Holding Faculty Rank</a></li>
+                    </ol>
+                </li>
             </ol>
         """
         return content
 
+    def generate_faculty(self):
+        """ Description
+
+        Returns:
+            str: description
+        """
+        content = f"""
+            <div id="faculty">
+                <h2 id="faculty-registry">Faculty Registry</h2>
+                <h3 id="emeriti-faculty">Emeriti Faculty</h3>
+                {self.fE.data[1]["Content"]}
+                <h3 id="current-faculty">Current Faculty</h3>
+                {self.fE.data[0]["Content"]}
+                <h3 id="others-holding-faculty-rank">Others Holding Faculty Rank</h3>
+                {self.fE.data[2]["Content"]}
+            </div>
+        """
+        return content
+
+
     def generate_json_from_data(self, output_directory: str, filename: str, cont=False):
         """ Write a JSON file
+
         Args:
+            output_directory (str): [description]
             filename (str): file_path
-            cont (bool, optional): Whether to concatenate or not. Defaults to False.
+            cont (bool, optional):  Whether to concatenate or not. Defaults to False.
         """
+        
         data = {}
         data['Policies'] = self.pE.data
         data['Programs'] = self.cE.data
+        data['Faculty'] = self.fE.data
+        print(data['Faculty'])
         output_dir = output_directory
         if not output_directory.endswith("/"):
             output_dir += "/"
@@ -277,7 +333,9 @@ Program Description
         
     def generate_html_from_data(self, output_directory: str, filename: str):
         """ Write html file
+
         Args:
+            output_directory (str): [description]
             filename (str): file_path
         """
         output_dir = output_directory
@@ -290,3 +348,7 @@ Program Description
                 f.write(self.gen_all_policies().encode("utf8"))
             if self.cE:
                 f.write(self.gen_all_subjects().encode("utf8"))
+            if self.fE:
+                f.write(self.generate_faculty().encode("utf8"))
+
+        print(f"Done! The output is at {output_directory}/{filename}")

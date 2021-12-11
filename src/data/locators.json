@@ -1,0 +1,190 @@
+{
+  "project": "",
+  "description": "",
+  "version": "1.0.0",
+  "data": {
+    "IDS_FOR_DEFAULT_COURSE_MAIN": {
+      "description": "",
+      "data": []
+    },
+    "IDS_FOR_DEFAULT_COURSE_PROG": {
+      "description": "",
+      "data": []
+    },
+    "IDS_FOR_DEFAULT_COURSE_REQ": {
+      "description": "",
+      "data": []
+    },
+    "IDS_FOR_DEFAULT_COURSE_CLS": {
+      "description": "",
+      "data": []
+    },
+    "IDS_FOR_DEFAULT_FACULTY": {
+      "description": "",
+      "data": []
+    },
+    "IDS_FOR_DEFAULT_POLICIES": {
+      "description": "",
+      "data": []
+    },
+    "DEFAULT_CONFIG_COURSE_MAIN": {
+      "description": "",
+      "data": {
+        "html_tag": "",
+        "css_class": ""
+      }
+    },
+    "DEFAULT_CONFIG_COURSE_PROG": {
+      "description": "default html_tag and css_class locator for course program pages",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform"
+      }
+    },
+    "DEFAULT_CONFIG_COURSE_REQ": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple"
+      }
+    },
+    "DEFAULT_CONFIG_COURSE_CLS": {
+      "description": "",
+      "data": {
+        "html_tag": "ul",
+        "css_class": "gb-c-accordion__group"
+      }
+    },
+    "DEFAULT_CONFIG_FACULTY": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform"
+      },
+      "exclude": [
+        {
+          "html_tag": "div",
+          "css_class": "gb-c-callout-accessibility gb-u-spacing-double"
+        }
+      ]
+    },
+    "DEFAULT_CONFIG_POLICIES": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform"
+      }
+    },
+    "business-bom-program-description-requirements": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple"
+      },
+      "exclude": [
+        {
+          "from": {
+            "html_tag": "hr",
+            "css_class": "",
+            "inclusive": true
+          }
+        }
+      ]
+    },
+    "education-program-description": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple gb-u-spacing-double-bottom"
+      },
+      "exclude": [
+        {
+          "html_tag": "div",
+          "css_class": "gb-c-callout-accessibility gb-u-spacing-double"
+        }
+      ]
+    },
+    "german-studies-program-requirements": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple"
+      },
+      "exclude": [
+        {
+          "html_tag": "div",
+          "css_class": "gb-c-callout-accessibility gb-u-spacing-double"
+        }
+      ]
+    },
+    "individualized-major-program-description-requirements": {
+      "description": "individualized-major-program-description-requirements",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple"
+      },
+      "exclude": [
+        {
+          "html_tag": "div", 
+          "css_class": "gb-c-callout-accessibility gb-u-spacing-double"
+        }
+      ]
+    },
+    "music-sunderman-conservatory-program-description": {
+      "description": "music-sunderman-conservatory-program-description",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple gb-u-spacing-double-bottom"
+      },
+      "exclude": [
+        {
+          "html_tag": "p",
+          "css_class": "gb-u-type-p--large"
+        },
+        {
+          "html_tag": "div",
+          "css_class": "gb-c-department-mm"
+        }
+      ]
+    },
+    "management-oms-program-description-requirements": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple"
+      },
+      "exclude": [
+        {
+          "from": {
+            "html_tag": "hr",
+            "css_class": "",
+            "inclusive": true
+          }
+        }
+      ]
+    },
+    "religious-studies-courses": {
+      "description": "",
+      "data": {
+        "html_tag": "div",
+        "css_class": "column gb-u-spacing-quad-top gb-u-padding-column-right"
+      },
+      "exclude": [
+        {
+          "from": {
+            "html_tag": "div",
+            "css_class": "gb-c-accordion js-accordion-group",
+            "inclusive": true
+          }
+        }
+      ]
+    },
+    "women-gender-sexuality-courses": {
+      "description": "women-gender-sexuality-courses",
+      "data": {
+        "html_tag": "div",
+        "css_class": "gb-c-longform gb-u-spacing-triple gb-u-spacing-double-bottom"
+      }
+    }
+  }
+}

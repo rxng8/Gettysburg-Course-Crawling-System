@@ -10,9 +10,9 @@
         can be viewed at `../../doc/` folder.
 """
 
-from explorer import *
-from extractor import *
-from generator import *
-from scraper import *
+from .explorer import *
+from .extractor import *
+from .generator import *
+from .scraper import *
 
-from test import *
+# from test import *

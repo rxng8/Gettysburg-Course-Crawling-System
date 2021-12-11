@@ -1,0 +1,157 @@
+\hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor}{}\doxysection{catalog\+\_\+engine.\+extractor.\+Policy\+Extractor Class Reference}
+\label{classcatalog__engine_1_1extractor_1_1_policy_extractor}\index{catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}}
+
+
+This class extracts policy pages.  
+
+
+Inheritance diagram for catalog\+\_\+engine.\+extractor.\+Policy\+Extractor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcatalog__engine_1_1extractor_1_1_policy_extractor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1extractor_1_1_policy_extractor_aadf66a19bb7529957394fee9479da672}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classcatalog__engine_1_1scraper_1_1_scraper}{Scraper}} scraper)
+\begin{DoxyCompactList}\small\item\em description \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1extractor_1_1_policy_extractor_afb8a1989980a841e41a4c52e37f6f175}{get\+\_\+policy\+\_\+ids}} (self)
+\begin{DoxyCompactList}\small\item\em Gets a list of all links of the type \char`\"{}\+Policy Details\char`\"{}. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1extractor_1_1_policy_extractor_a82db1c9d1400f107a22dba8c64595c94}{get\+\_\+policy\+\_\+type}} (self, title)
+\begin{DoxyCompactList}\small\item\em \mbox{[}summary\mbox{]} \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1extractor_1_1_policy_extractor_a7672272ce694dc336e4d698ec81faaae}{extract\+\_\+soup}} (self, soup\+\_\+id, policy\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Extract policy information for a specific policy. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1extractor_1_1_policy_extractor_a3938489f94c184ec4fdbcc2198256c14}{extract\+\_\+all\+\_\+soup}} (self)
+\begin{DoxyCompactList}\small\item\em Extract every policy in the soup list. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1extractor_1_1_policy_extractor_a546f9200188ca1bc5c2e7326e6ac9421}{to\+String}} (self)
+\begin{DoxyCompactList}\small\item\em From crawl data, generate the html string to be written to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a7dc3fe76e2a465e5985322e66093341d}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a7dc3fe76e2a465e5985322e66093341d}} 
+{\bfseries VERBOSE}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a93ce3e7985862f770f38403373dc4ee1}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a93ce3e7985862f770f38403373dc4ee1}} 
+{\bfseries scraper}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a9374c060ffc316e91612d893b6c77f05}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a9374c060ffc316e91612d893b6c77f05}} 
+{\bfseries base\+\_\+uri}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a0071bf4bb80f8f83e12c613b9bb05ea5}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a0071bf4bb80f8f83e12c613b9bb05ea5}} 
+{\bfseries data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class extracts policy pages. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_aadf66a19bb7529957394fee9479da672}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_aadf66a19bb7529957394fee9479da672}} 
+\index{catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+extractor.\+Policy\+Extractor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classcatalog__engine_1_1scraper_1_1_scraper}{Scraper}}}]{scraper }\end{DoxyParamCaption})}
+
+
+
+description 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scraper} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classcatalog__engine_1_1extractor_1_1_extractor_a6559292151b1034c5b495afd4a85271e}{catalog\+\_\+engine.\+extractor.\+Extractor}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a3938489f94c184ec4fdbcc2198256c14}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a3938489f94c184ec4fdbcc2198256c14}} 
+\index{catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}!extract\_all\_soup@{extract\_all\_soup}}
+\index{extract\_all\_soup@{extract\_all\_soup}!catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{extract\_all\_soup()}{extract\_all\_soup()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+extractor.\+Policy\+Extractor.\+extract\+\_\+all\+\_\+soup (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Extract every policy in the soup list. 
+
+\begin{DoxyReturn}{Returns}
+
+
+List List of policy Dicts (each policy is represented by a dictionary) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a7672272ce694dc336e4d698ec81faaae}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a7672272ce694dc336e4d698ec81faaae}} 
+\index{catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}!extract\_soup@{extract\_soup}}
+\index{extract\_soup@{extract\_soup}!catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{extract\_soup()}{extract\_soup()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+extractor.\+Policy\+Extractor.\+extract\+\_\+soup (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{soup\+\_\+id,  }\item[{}]{policy\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Extract policy information for a specific policy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em soup\+\_\+id} & The Beautiful\+Soup object to extract data from \\
+\hline
+{\em policy\+\_\+id} & The id of the policy from the url parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Return}
+(Dict)\+: The policy object for that specific page 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_afb8a1989980a841e41a4c52e37f6f175}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_afb8a1989980a841e41a4c52e37f6f175}} 
+\index{catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}!get\_policy\_ids@{get\_policy\_ids}}
+\index{get\_policy\_ids@{get\_policy\_ids}!catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{get\_policy\_ids()}{get\_policy\_ids()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+extractor.\+Policy\+Extractor.\+get\+\_\+policy\+\_\+ids (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Gets a list of all links of the type \char`\"{}\+Policy Details\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+
+
+List List of (index in df, link) of core links for policies 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a82db1c9d1400f107a22dba8c64595c94}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a82db1c9d1400f107a22dba8c64595c94}} 
+\index{catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}!get\_policy\_type@{get\_policy\_type}}
+\index{get\_policy\_type@{get\_policy\_type}!catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{get\_policy\_type()}{get\_policy\_type()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+extractor.\+Policy\+Extractor.\+get\+\_\+policy\+\_\+type (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{title }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}summary\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & \mbox{[}description\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1extractor_1_1_policy_extractor_a546f9200188ca1bc5c2e7326e6ac9421}\label{classcatalog__engine_1_1extractor_1_1_policy_extractor_a546f9200188ca1bc5c2e7326e6ac9421}} 
+\index{catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}!toString@{toString}}
+\index{toString@{toString}!catalog\_engine.extractor.PolicyExtractor@{catalog\_engine.extractor.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+extractor.\+Policy\+Extractor.\+to\+String (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+From crawl data, generate the html string to be written to file. 
+
+\begin{DoxyReturn}{Returns}
+(str)\+: String of the data 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/catalog\+\_\+engine/\mbox{\hyperlink{extractor_8py}{extractor.\+py}}\end{DoxyCompactItemize}

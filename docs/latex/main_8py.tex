@@ -1,0 +1,57 @@
+\hypertarget{main_8py}{}\doxysection{src/main.py File Reference}
+\label{main_8py}\index{src/main.py@{src/main.py}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8py_ab00ed62abeba7b193b57e21b9e6a86d9}\label{main_8py_ab00ed62abeba7b193b57e21b9e6a86d9}} 
+string {\bfseries main.\+csv\+\_\+course\+\_\+path} = \textquotesingle{}./data/course\+Links.\+csv\textquotesingle{}
+\item 
+\mbox{\Hypertarget{main_8py_a5a9c12b29823c32c4a2823fdd17ceee6}\label{main_8py_a5a9c12b29823c32c4a2823fdd17ceee6}} 
+string {\bfseries main.\+csv\+\_\+policies\+\_\+path} = \textquotesingle{}./data/pages.\+csv\textquotesingle{}
+\item 
+\mbox{\Hypertarget{main_8py_a63340edbf6246c49cf3ffa174abcce2d}\label{main_8py_a63340edbf6246c49cf3ffa174abcce2d}} 
+string {\bfseries main.\+csv\+\_\+faculty\+\_\+path} = \textquotesingle{}./data/faculty.\+csv\textquotesingle{}
+\item 
+\mbox{\Hypertarget{main_8py_a0ef194009f926939b011b3a38670eb76}\label{main_8py_a0ef194009f926939b011b3a38670eb76}} 
+{\bfseries main.\+s\+\_\+c} = Scraper(csv\+\_\+course\+\_\+path, flag=\textquotesingle{}courses\textquotesingle{})
+\item 
+\mbox{\Hypertarget{main_8py_a6f6da982a083135694d4af42cd21b23a}\label{main_8py_a6f6da982a083135694d4af42cd21b23a}} 
+{\bfseries main.\+s\+\_\+p} = Scraper(csv\+\_\+policies\+\_\+path, flag=\textquotesingle{}policies\textquotesingle{})
+\item 
+\mbox{\Hypertarget{main_8py_ae55cf0da22d032ea0144b3ee4aa0d8c8}\label{main_8py_ae55cf0da22d032ea0144b3ee4aa0d8c8}} 
+{\bfseries main.\+s\+\_\+f} = Scraper(csv\+\_\+faculty\+\_\+path, flag=\textquotesingle{}faculty\textquotesingle{})
+\item 
+\mbox{\Hypertarget{main_8py_a8e49d3953e83127f681ff8c9e260d2f6}\label{main_8py_a8e49d3953e83127f681ff8c9e260d2f6}} 
+{\bfseries main.\+ce} = Course\+Extractor(s\+\_\+c)
+\item 
+\mbox{\Hypertarget{main_8py_a45e7928c2da2591c09686ff6ea3821b2}\label{main_8py_a45e7928c2da2591c09686ff6ea3821b2}} 
+{\bfseries main.\+pe} = Policy\+Extractor(s\+\_\+p)
+\item 
+\mbox{\Hypertarget{main_8py_a86588891239876407fa78ffe110f70f9}\label{main_8py_a86588891239876407fa78ffe110f70f9}} 
+{\bfseries main.\+fe} = Faculty\+Extractor(s\+\_\+f)
+\item 
+\mbox{\Hypertarget{main_8py_a603b5d15acf208a4a9063ae051b1042a}\label{main_8py_a603b5d15acf208a4a9063ae051b1042a}} 
+string {\bfseries main.\+api} = \textquotesingle{}https\+://www.\+gettysburg.\+edu/api/funnelback/courses/\textquotesingle{}
+\item 
+\mbox{\Hypertarget{main_8py_adacfb9c739f22c929b6beace87dd1c25}\label{main_8py_adacfb9c739f22c929b6beace87dd1c25}} 
+{\bfseries main.\+c\+\_\+explore} = Course\+Explorer(s\+\_\+c.\+request\+\_\+json\+\_\+from\+\_\+api(api))
+\item 
+\mbox{\Hypertarget{main_8py_a7814bbc739e6c7aa27e94cb17ffb9177}\label{main_8py_a7814bbc739e6c7aa27e94cb17ffb9177}} 
+{\bfseries main.\+gen} = Generator(ce, pe, fe, c\+\_\+explore)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Alex Nguyen
+\end{DoxyAuthor}
+This is the test file to handle every execution
+
+Catalog Engine for Gettysburg College (catalog\+\_\+engine) is the engine which extracts content from Gettysburg website, together with Gettysburg website policies and courses api, and generate the appropriate courses content catalog for an academic year. More documentations can be viewed at {\ttfamily ../../doc/} folder.
+
+\begin{DoxyAuthor}{Author}
+Alex Nguyen
+\end{DoxyAuthor}
+This is the main file to handle every execution
+
+Catalog Engine for Gettysburg College (catalog\+\_\+engine) is the engine which extracts content from Gettysburg website, together with Gettysburg website policies and courses api, and generate the appropriate courses content catalog for an academic year. More documentations can be viewed at {\ttfamily ../../doc/} folder. 

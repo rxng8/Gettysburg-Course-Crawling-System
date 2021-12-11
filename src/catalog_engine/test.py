@@ -10,10 +10,11 @@
         can be viewed at `../../doc/` folder.
 """
 
-from test.scraper_test import test_course_URL_scraper
-from scraper import *
+# from .test.scraper_test import test_course_URL_scraper
+from .scraper import *
 
 if __name__ == '__main__':
     # test_course_URL_scraper()
-    sc = CourseURLScraper()
-    sc.to_csv("../data/courseLinks.csv")
+    # sc = CourseURLScraper()
+    # sc.to_csv("../data/courseLinks.csv")
+    print("abc")

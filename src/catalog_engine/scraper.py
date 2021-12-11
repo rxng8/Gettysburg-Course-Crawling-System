@@ -1,5 +1,4 @@
-"""
-    @file scraper.py
+""" @file scraper.py
     @author Alex Nguyen
 
     This file contain every scraper classes and methods
@@ -19,34 +18,53 @@ import json
 import os
 
 class Scraper:
+    """ The scraper class will crawl all data from link
     """
-    The scraper class will crawl all data from link
-    """
-    def __init__(self, csv_path, data_path='../data/'):
-        """
+
+    def __init__(self, csv_path, data_path='./data/', flag='courses'):
+        """ Description
+
         Args:
-            csv_path (str): The path to the csv file that contains all link
+            csv_path (str): The path to the csv file that contains all link. 
+            There are two flags for the scraper to know which folder to store data in!
         """
         super().__init__()
+        self.flag = flag
         self.csv_path = csv_path
-        self.mapper = {}
+
+        # This variable is created to be modified in `scrape_src()`
+        self.mapper: Dict[int, bs4.BeautifulSoup] = {}
+
         self.VERBOSE = True
         
         self.df = pd.read_csv(csv_path, names=['URL', 'Title', 'Notes']).iloc[:, :].reset_index()[["URL", "Title", "Notes"]]
 
         if not os.path.isdir(data_path + "html/"):
             os.mkdir(data_path + "html/")
-        self.soup = self.scrape_src(data_path + "html/")
-        
+        if not os.path.isdir(data_path + "html/" + "courses/"):
+            os.mkdir(data_path + "html/" + "courses/")
+        if not os.path.isdir(data_path + "html/" + "policies/"):
+            os.mkdir(data_path + "html/" + "policies/")
+        if not os.path.isdir(data_path + "html/" + "faculty/"):
+            os.mkdir(data_path + "html/" + "faculty/")
+        if self.flag == 'courses':
+            self.soup = self.scrape_src(data_path + "html/" + "courses/")
+        elif self.flag == 'policies':
+            self.soup = self.scrape_src(data_path + "html/" + "policies/")
+        elif self.flag == 'faculty':
+            self.soup = self.scrape_src(data_path + "html/" + "faculty/")
+        else:
+            print("Wrong flag in scraper!")
+
     def scrape_src(self, data_path_html=None) -> List[bs4.BeautifulSoup]:
-        """Scrape every link from the csv file
+        """ Scrape every link from the csv file
+        
         Returns:
             List[bs4.BeautifulSoup]: [description]
         """
         if self.VERBOSE:
             print("Crawling data from all links ...")
         # print("len: " + str(len(os.listdir(data_path_html))))
-
 
         soup = []
         for i, line in self.df.iterrows():
@@ -72,41 +90,52 @@ class Scraper:
             print("Done! Data now loaded in self.soup array")
         return soup
 
-
     def request_json_from_api(self, url: str):
+        """[summary]
+
+        Args:
+            url (str): [description]
+
+        Returns:
+            [type]: [description]
+        """
         res = requests.get(url)
         data = res.json()
         return data
 
     def set_verbose(self, v):
-        """Debugger
+        """ Debugger
+
         Args:
             v (bool): Whether the debugger mode is on or off.
         """
         self.VERBOSE = v
 
     def __str__(self):
-        """From crawl data, generate the html string to be written to file.
-        @Params:
-        @Return: (str): String of the data
+        """ From crawl data, generate the html string to be written to file.
+
+        Returns: 
+            str: String of the data
         """
         description = f"The data is at `self.soup` and the mapper (int, soup) from dataframe row num to the soup data"
         return description
 
 
 class CourseURLScraper:
-    """
-    This class only crawl every course url from this link:
+    """ This class only crawl every course url from this link: 
         "https://www.gettysburg.edu/academic-programs/curriculum/catalog/programs-of-study/"
         and extract links to csv file.
     """
+    
     def __init__(self):
+        """[summary]
+        """
         self.uri = "https://www.gettysburg.edu/academic-programs/curriculum/catalog/programs-of-study/"
         self.soup: bs4.BeautifulSoup = self.scrape()
         self.links: List[str] = self.extract_link(self.soup)
     
     def scrape(self) -> bs4.BeautifulSoup:
-        """Scrape source
+        """ Scrape source
 
         Returns:
             (bs4.BeautifulSoup): The soup for the source
@@ -116,6 +145,14 @@ class CourseURLScraper:
         return soup
 
     def extract_link(self, soup: bs4.BeautifulSoup) -> List[str]:
+        """ [summary]
+
+        Args:
+            soup (bs4.BeautifulSoup): [description]
+
+        Returns:
+            List[str]: [description]
+        """
         links_soup = soup.find_all('a', {'href': re.compile(r"academic-programs")})
         links = []
         for link_soup in links_soup:
@@ -132,4 +169,9 @@ class CourseURLScraper:
         df.to_csv(path)
 
     def __str__(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return str(self.links)

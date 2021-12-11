@@ -1,0 +1,104 @@
+\hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper}{}\doxysection{catalog\+\_\+engine.\+deprecated\+\_\+packages.\+Scraper Class Reference}
+\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper}\index{catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}}
+
+
+The scraper class will crawl all data from link.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a6cba26d467ea44d6c209851d09e6f94a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, csv\+\_\+path)
+\item 
+List\mbox{[}bs4.\+Beautiful\+Soup\mbox{]} \mbox{\hyperlink{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a160adb4825e693f78676e7dd46c60ed4}{scrape\+\_\+src}} (self)
+\begin{DoxyCompactList}\small\item\em Scrape every link from the csv file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_ab8aad1652de399b6aa709ccea4b692e5}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_ab8aad1652de399b6aa709ccea4b692e5}} 
+def {\bfseries request\+\_\+json\+\_\+from\+\_\+api} (self, str url)
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a745ffdfa2bc2528549d1cc1618d1433c}{set\+\_\+verbose}} (self, v)
+\begin{DoxyCompactList}\small\item\em Debugger. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a5c5359786a4a6300a7bf1cfca7bae6c5}{to\+String}} (self)
+\begin{DoxyCompactList}\small\item\em From crawl data, generate the html string to be written to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a4a7987930d886d322adc05524a521f2a}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a4a7987930d886d322adc05524a521f2a}} 
+{\bfseries csv\+\_\+path}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a920931679bfb40b739604bd74fde2197}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a920931679bfb40b739604bd74fde2197}} 
+{\bfseries mapper}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_aa3ced13fa14519e7298a381711b0d244}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_aa3ced13fa14519e7298a381711b0d244}} 
+{\bfseries VERBOSE}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_aa9f7ac0eeb61624ff30a65db3faab152}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_aa9f7ac0eeb61624ff30a65db3faab152}} 
+{\bfseries df}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_ad39dfc4219eeb2db6c587ef32783ed09}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_ad39dfc4219eeb2db6c587ef32783ed09}} 
+{\bfseries soup}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The scraper class will crawl all data from link. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a6cba26d467ea44d6c209851d09e6f94a}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a6cba26d467ea44d6c209851d09e6f94a}} 
+\index{catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+deprecated\+\_\+packages.\+Scraper.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{csv\+\_\+path }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em csv\+\_\+path} & The path to the csv file that contains all link \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a160adb4825e693f78676e7dd46c60ed4}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a160adb4825e693f78676e7dd46c60ed4}} 
+\index{catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}!scrape\_src@{scrape\_src}}
+\index{scrape\_src@{scrape\_src}!catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}}
+\doxysubsubsection{\texorpdfstring{scrape\_src()}{scrape\_src()}}
+{\footnotesize\ttfamily  List\mbox{[}bs4.\+Beautiful\+Soup\mbox{]} catalog\+\_\+engine.\+deprecated\+\_\+packages.\+Scraper.\+scrape\+\_\+src (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Scrape every link from the csv file. 
+
+\begin{DoxyReturn}{Returns}
+
+
+List \mbox{[}description\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a745ffdfa2bc2528549d1cc1618d1433c}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a745ffdfa2bc2528549d1cc1618d1433c}} 
+\index{catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}!set\_verbose@{set\_verbose}}
+\index{set\_verbose@{set\_verbose}!catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}}
+\doxysubsubsection{\texorpdfstring{set\_verbose()}{set\_verbose()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+deprecated\+\_\+packages.\+Scraper.\+set\+\_\+verbose (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{v }\end{DoxyParamCaption})}
+
+
+
+Debugger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Whether the debugger mode is on or off. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a5c5359786a4a6300a7bf1cfca7bae6c5}\label{classcatalog__engine_1_1deprecated__packages_1_1_scraper_a5c5359786a4a6300a7bf1cfca7bae6c5}} 
+\index{catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}!toString@{toString}}
+\index{toString@{toString}!catalog\_engine.deprecated\_packages.Scraper@{catalog\_engine.deprecated\_packages.Scraper}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+deprecated\+\_\+packages.\+Scraper.\+to\+String (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+From crawl data, generate the html string to be written to file. 
+
+@\+Params\+: @\+Return\+: (str)\+: String of the data 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/catalog\+\_\+engine/deprecated\+\_\+packages.\+py\end{DoxyCompactItemize}

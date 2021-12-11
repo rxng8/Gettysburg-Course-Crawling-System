@@ -1,5 +1,4 @@
-"""
-    @file explorer.py
+""" @file explorer.py
     @author Alex Nguyen
 
     This file contains the classes and methods for the courses api communication
@@ -18,17 +17,21 @@ import requests
 import json
 
 class CourseExplorer:
+    """ Class for handling 'https://www.gettysburg.edu/api/funnelback/courses/' api specifically.
     """
-    Class for handling 'https://www.gettysburg.edu/api/funnelback/courses/'
-        api specifically.
-    """
+    
     def __init__(self, data: Dict):
+        """ Description
+
+        Args:
+            data (Dict): [description]
+        """
         self.data = data['data']
         self.attrs = ["catalogNumber", "subjectAreaAbbrv", "id", \
         "deparmentName", "title", "officialCourseDesc", "academicDepartmentId","url"]
 
     def get_description(self, course_code: str) -> str:
-        """Given a course code, return the description of the course from the api
+        """ Given a course code, return the description of the course from the api
         Args:
             course_code (str): The course code is of the form "ABC-123". I.E, "AFS-132", "CS-216"
 
@@ -53,9 +56,7 @@ class CourseExplorer:
 
 
 class ProgramExplorer:
-    """
-    Class for handling only 'https://www.gettysburg.edu/api/funnelback/programs/' api
-        communication.
+    """ Class for handling only 'https://www.gettysburg.edu/api/funnelback/programs/' api communication.
     """
 
     def __init__(self, data: Dict):

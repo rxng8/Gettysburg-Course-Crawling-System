@@ -1,5 +1,4 @@
-"""
-    @file extractor.py
+""" @file extractor.py
     @author Alex Nguyen and Ben Durham
 
     This file contains classes and methods for policies and courses extractor
@@ -16,44 +15,69 @@ import pandas as pd
 import bs4
 import requests
 import json
-from scraper import *
+from .scraper import *
 
 class Extractor:
-    """
-        Super class of extractor
+    """ Super class of extractor
     """
     def __init__(self, n_url: int):
-        """
+        """ description
         Args:
             n_url (int): number of total page have been crawled.
         """
         self.extracted: List[bool] = [False] * n_url
 
     def extract_all_source(self):
-        """
-        Extract all sources
+        """ Extract all sources
         """
         pass
 
     def extract_subjects(self):
-        """
-        Extract all subject pages
+        """ Extract all subject pages
         """
         pass
 
     def extract_policy(self):
-        """
-        Extract all policy pages
+        """ Extract all policy pages
         """
         pass
-        
 
-class PolicyExtractor (Extractor):
-    """
-        This class extracts policy pages
+class FacultyExtractor (Extractor):
+    """ This class extracts faculty pages
     """
     def __init__(self, scraper: Scraper):
+        """ description
+        Args:
+            scraper (Scraper): [description]
         """
+        print("Extracting Faculty Info")
+        self.VERBOSE = False
+        super().__init__(len(scraper.df))
+        self.scraper = scraper
+        self.base_uri = 'https://www.gettysburg.edu/academic-programs/curriculum/catalog/faculty-registry/'
+        self.data = self.extract_all_soup()
+
+    def extract_all_soup(self):
+        """ Extracts faculty information and places it in the data structure
+
+        Returns:
+            [type]: [description]
+        """
+        data = []
+        for i, line in self.scraper.df.iterrows():
+            soup = self.scraper.mapper[i]
+            if self.base_uri in str(line["URL"]):
+                page : Dict = {}
+                page['Title'] = str(line["URL"].split('/')[-1])
+                page['Content'] = str(soup.select('div.gb-c-longform')[0])
+                data.append(page)
+        return data
+
+class PolicyExtractor (Extractor):
+    """ This class extracts policy pages
+    """
+    def __init__(self, scraper: Scraper):
+        """ description
         Args:
             scraper (Scraper): [description]
         """
@@ -65,20 +89,27 @@ class PolicyExtractor (Extractor):
         self.data = self.extract_all_soup()
 
     def get_policy_ids(self):
-      """
-      Gets a list of all links of the type "Policy Details"
+        """ Gets a list of all links of the type "Policy Details"
 
-      Returns:
-          List[Tuple]: List of (index in df, link) of core links courses
-      """
-      policy_ids = []
-      for i, line in self.scraper.df.iterrows():
-        if self.base_uri in str(line["URL"]):
-          policy_id = str(line["URL"].split('?')[1])[3:]
-          policy_ids.append((i, policy_id))
-      return policy_ids
+        Returns:
+            List[Tuple]: List of (index in df, link) of core links for policies
+        """
+        policy_ids = []
+        for i, line in self.scraper.df.iterrows():
+            if self.base_uri in str(line["URL"]):
+                policy_id = str(line["URL"].split('?')[1])[3:]
+                policy_ids.append((i, policy_id))
+        return policy_ids
 
     def get_policy_type(self, title):
+        """[summary]
+
+        Args:
+            title ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
         if "Admission" in title or "Application" in title or "Advanced Placement" in title:
             return "Admissions"
 
@@ -101,14 +132,14 @@ class PolicyExtractor (Extractor):
         return "Academic"
 
     def extract_soup(self, soup_id, policy_id):
-        """Extract policy information for a specific policy
+        """ Extract policy information for a specific policy
+
         Args:
             soup_id (BeautifulSoup) : The BeautifulSoup object to extract data from
             policy_id (string) : The id of the policy from the url parameter
 
         Return:
             (Dict): The policy object for that specific page
-
         """
         data: Dict = {}
         soup = self.scraper.mapper[soup_id]
@@ -120,6 +151,7 @@ class PolicyExtractor (Extractor):
         
     def extract_all_soup(self):
         """ Extract every policy in the soup list
+
         Returns:
             List[Dict]: List of policy Dicts (each policy is represented by a dictionary)
         """
@@ -132,19 +164,19 @@ class PolicyExtractor (Extractor):
         return data
     
     def toString(self):
-        """From crawl data, generate the html string to be written to file.
-        @Params:
-        @Return: (str): String of the data
+        """ From crawl data, generate the html string to be written to file.
+        
+        Returns: 
+            (str): String of the data
         """
         pass
 
 class CourseExtractor (Extractor):
-    """
-    This class extracts subject pages
+    """ This class extracts subject pages
     """
 
     def __init__(self, scraper: Scraper): 
-        """
+        """ description
         Args:
             scraper (Scraper): [description]
         """
@@ -209,7 +241,8 @@ class CourseExtractor (Extractor):
         return course_index, base_uri
 
     def extract_course_index(self):
-        """[summary]
+        """ Take all line indices of the links that have pattern `r"\/academic-programs\/.+\/.*"`
+        in the scraper.df and put all those indices in an array `course_index` 
 
         Returns:
             [type]: [description]
@@ -225,6 +258,7 @@ class CourseExtractor (Extractor):
 
     def extract_soup(self, id, base_uri, uri, soup, title=None, notes=None):
         """Extract one page of html in the list of soup
+
         Args:
             id (int): id in the mapper which map from row containing 
                 url, title, notes to the soup list
@@ -236,6 +270,7 @@ class CourseExtractor (Extractor):
             notes (str): notes in the csv file
             soup (BeautifulSoup): the soup in the list of soup that
                 correspond to this row (link, etc)
+
         Returns:
             dict: One dictionary data for a page
         """
@@ -249,6 +284,12 @@ class CourseExtractor (Extractor):
             # content = soup.find('main', {'class': 'gb-u-spacing-quad-top'})
             content = soup.find('div', {'class': 'gb-c-longform'})
             if content:
+                # Remove image tag
+                # content_copy = content.copy()
+                # imgs = content_copy.find_all('img')
+                imgs = content.find_all('img')
+                for img in imgs:
+                    img.decompose()
                 # data['Major-minor'] = str(content.text)
                 data['Major-minor'] = str(content)
             else:
@@ -318,7 +359,12 @@ class CourseExtractor (Extractor):
             soup = self.scraper.mapper[id]
             content = soup.find('div', {'class': 'gb-u-spacing-bottom'})
             if content is not None:
-                
+                # Remove image tag
+                # content_copy = content.copy()
+                # imgs = content_copy.find_all('img')
+                imgs = content.find_all('img')
+                for img in imgs:
+                    img.decompose()
                 data['Subject'] = soup.find('h1', {'class': 'gb-c-hero__title'}).text
                 data['Major'] = "Major" in content.text
                 data['Minor'] = "Minor" in content.text
@@ -338,7 +384,12 @@ class CourseExtractor (Extractor):
             # Handle conservatory of music
             content = soup.find('main', {'class': 'gb-u-spacing-quad-top'})
             if content is not None:
-                
+                # Remove image tag
+                # content_copy = content.copy()
+                # imgs = content_copy.find_all('img')
+                imgs = content.find_all('img')
+                for img in imgs:
+                    img.decompose()
                 data['Subject'] = soup.find('h1', {'class': 'gb-c-hero__title'}).text
                 data['Major'] = True
                 data['Minor'] = True
@@ -359,7 +410,12 @@ class CourseExtractor (Extractor):
             # Handle pre-health
             content = soup.find('div', {'class': 'gb-c-longform'})
             if content is not None:
-                
+                # Remove image tag
+                # content_copy = content.copy()
+                # imgs = content_copy.find_all('img')
+                imgs = content.find_all('img')
+                for img in imgs:
+                    img.decompose()
                 data['Subject'] = soup.find('h1', {'class': 'gb-c-hero__title'}).text
                 data['Major'] = None
                 data['Minor'] = None
@@ -389,6 +445,7 @@ class CourseExtractor (Extractor):
 
     def extract_all_soup(self):
         """ Extract every soup in the soup list
+        
         Returns:
             List[Dict]: List of subject content (each content is represented by a dictionary)
         """
@@ -427,7 +484,10 @@ class CourseExtractor (Extractor):
                 core += 1
                 # print(current_uri)
                 if ptr != 0:
-                    data[current_subject_name] = current_subject_data
+                    if current_subject_name not in data.keys():
+                        data[current_subject_name] = current_subject_data
+                    else:
+                        data[current_subject_name] = {**data[current_subject_name], **current_subject_data}
                     # print(data[current_subject_name].keys())
                     current_subject_data = {}
                 current_subject_uri = current_uri
@@ -457,9 +517,9 @@ class CourseExtractor (Extractor):
 
         return data
 
-
     def extract_all_soup_deprecated(self):
         """ Extract every soup in the soup list
+        
         Returns:
             List[Dict]: List of subject content (each content is represented by a dictionary)
         """
@@ -517,8 +577,9 @@ class CourseExtractor (Extractor):
 
 
     def __str__(self):
-        """From crawl data, generate the html string to be written to file.
-        @Params:
-        @Return: (str): String of the data
+        """ From crawl data, generate the html string to be written to file.
+        
+        Returns: 
+            str: String of the data
         """
         pass

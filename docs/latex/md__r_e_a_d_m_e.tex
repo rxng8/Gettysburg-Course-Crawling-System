@@ -1,0 +1,78 @@
+This script grabs all of the relevant content for the course catalog from the gettysburg.\+edu website and compiles into a single HTML file. It extracts all of the urls from a csv of the with the given format (NEED TO ADD).
+
+When grabbing the content from each page, this script assigns the section a new id created from its url path for the sake of linking to it throughout the document. Additionally, all non-\/external links re-\/created to link to the aforementioned id.
+
+Pages are added to the final HTML file in the order they are listed in the csv.\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{About Gettysburg Course Catalog Project}\label{md__r_e_a_d_m_e_autotoc_md5}
+Snapshot script to crawl the relevant pages of the Gettysburg College website to fetch the Course Catalog content and generate a single HTML file with structured headings.
+
+Main sections\+:
+\begin{DoxyItemize}
+\item Title and date generated
+\item Table of contents
+\item 1 -\/ Academic Policies
+\item 2 -\/ Admissions Policies
+\item 3 -\/ Financial Policies
+\item 4 -\/ Degree Requirements
+\item 5 -\/ Programs of Study (54 programs, including majors and minors)
+\item 6 -\/ Faculty Registry
+\end{DoxyItemize}
+
+The output is designed to be used as source for a Word or In\+Design document to generate an accessible PDF.
+
+Reference documents\+:
+\begin{DoxyItemize}
+\item \href{./src/model/model-document.pdf}{\texttt{ {\ttfamily model-\/document.\+pdf}}}\+: Year 2019 PDF as an example of what the finished document should look like
+\item \href{./src/model/model-output.html}{\texttt{ {\ttfamily model-\/output.\+html}}}\+: HTML markup template that the crawl script should render
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{Getting started}\label{md__r_e_a_d_m_e_autotoc_md6}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{The codebase}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item The codebase of the package is located in \href{../src/catalog_engine}{\texttt{ {\ttfamily src/catalog\+\_\+engine/}}}.
+\item The codebase consists of the following files\+:
+\begin{DoxyItemize}
+\item \href{../src/catalog_engine/scraper.py}{\texttt{ {\ttfamily scraper.\+py}}}\+: Scraper class which only crawl all sites from page.\+csv, and put them into data structures, i.\+e, list of soup, and mapper from each line to the soup. This class have been finished and does not need more change (for now)
+\item \href{../src/catalog_engine/extractor.py}{\texttt{ {\ttfamily extractor.\+py}}}\+: Extractor classes which only focus on taking those data structures we have from the Crawler, and organize and extract to build a kind of key, value dictionary, list according to the template model that Adrian gave us. (We can easily generate json file from this data structure, too!).
+\item \href{../src/catalog_engine/generator.py}{\texttt{ {\ttfamily generator.\+py}}}\+: Generator class which only focus on generating the output html file. So far I just have the generators that output every subjects (subjects, major-\/minor, courses, program) but not the curriculum and policies.
+\item \href{../src/catalog_engine/explorer.py}{\texttt{ {\ttfamily explorer.\+py}}}\+: Code for courses api communication.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{Data Structure}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyEnumerate}
+\item Courses JSON Data
+\end{DoxyEnumerate}
+
+(To be implemented)
+
+
+\begin{DoxyEnumerate}
+\item Policies JSON Data
+\end{DoxyEnumerate}
+
+(To be implemented)\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{How to run the package}\label{md__r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyEnumerate}
+\item Requirements\+:
+\begin{DoxyItemize}
+\item \href{https://www.python.org/}{\texttt{ Python}}
+\item \href{https://www.doxygen.nl/download.html}{\texttt{ Doxygen}} (if you want to generate the doc.)
+\end{DoxyItemize}
+\item Run this in bash 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# First change directory to the src folder}
+\DoxyCodeLine{cd src}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Install related python library}
+\DoxyCodeLine{pip install -\/r ./requirements.txt}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Run the main file from the package}
+\DoxyCodeLine{python3 ./main.py}
+
+\end{DoxyCode}
+
+\item Generate the docs if you want to\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen Doxyfile}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsubsection{Note that after executing the main file, 2 output will be produced in the folder $<$a href=\char`\"{}../output/\char`\"{} $>$$<$tt$>$output$<$/tt$>$$<$/a$>$\+: $<$tt$>$output\+\_\+official.\+json$<$/tt$>$ and $<$tt$>$output\+\_\+official.\+html$<$/tt$>$.}\label{md__r_e_a_d_m_e_autotoc_md10}

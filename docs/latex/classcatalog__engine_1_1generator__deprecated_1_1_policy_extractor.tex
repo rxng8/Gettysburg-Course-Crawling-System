@@ -1,0 +1,133 @@
+\hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor}{}\doxysection{catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Policy\+Extractor Class Reference}
+\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor}\index{catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}}
+
+
+This class extracts policy pages.  
+
+
+Inheritance diagram for catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Policy\+Extractor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a4f06dbd1bea8e97cfd1c79fe7a54a70a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_scraper}{Scraper}} scraper)
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_acddd4ecd973d39613bae93a6b33e8247}{get\+\_\+policy\+\_\+ids}} (self)
+\begin{DoxyCompactList}\small\item\em Gets a list of all links of the type \char`\"{}\+Policy Details\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a1872ae6de253166a3e4b6d8132135593}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a1872ae6de253166a3e4b6d8132135593}} 
+def {\bfseries get\+\_\+policy\+\_\+type} (self, title)
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_aa8f7981c67cb7351ecb5cbd521a59e0f}{extract\+\_\+soup}} (self, soup\+\_\+id, policy\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Extract policy information for a specific policy. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_ab257a75cfab71a6278481dc2e27f06fc}{extract\+\_\+all\+\_\+soup}} (self)
+\begin{DoxyCompactList}\small\item\em Extract every policy in the soup list. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a7a8f8b1a8ada4d2c9b63ad08184ca365}{to\+String}} (self)
+\begin{DoxyCompactList}\small\item\em From crawl data, generate the html string to be written to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_aa6e393220d3330835db79089d0ab3092}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_aa6e393220d3330835db79089d0ab3092}} 
+{\bfseries VERBOSE}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a6cc9d86035883fa6e4224c2b2b0e60cc}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a6cc9d86035883fa6e4224c2b2b0e60cc}} 
+{\bfseries scraper}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a4c2e4a933f3803f663433d54a2cb8028}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a4c2e4a933f3803f663433d54a2cb8028}} 
+{\bfseries base\+\_\+uri}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a6dbc8da8e7782dc9ca54b8947d944383}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a6dbc8da8e7782dc9ca54b8947d944383}} 
+{\bfseries data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class extracts policy pages. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a4f06dbd1bea8e97cfd1c79fe7a54a70a}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a4f06dbd1bea8e97cfd1c79fe7a54a70a}} 
+\index{catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Policy\+Extractor.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_scraper}{Scraper}}}]{scraper }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scraper} & \mbox{[}description\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_extractor_a0d83a584beb4f5aa35eb3b5b05be6768}{catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Extractor}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_ab257a75cfab71a6278481dc2e27f06fc}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_ab257a75cfab71a6278481dc2e27f06fc}} 
+\index{catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}!extract\_all\_soup@{extract\_all\_soup}}
+\index{extract\_all\_soup@{extract\_all\_soup}!catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{extract\_all\_soup()}{extract\_all\_soup()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Policy\+Extractor.\+extract\+\_\+all\+\_\+soup (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Extract every policy in the soup list. 
+
+\begin{DoxyReturn}{Returns}
+
+
+List List of policy Dicts (each policy is represented by a dictionary) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_aa8f7981c67cb7351ecb5cbd521a59e0f}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_aa8f7981c67cb7351ecb5cbd521a59e0f}} 
+\index{catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}!extract\_soup@{extract\_soup}}
+\index{extract\_soup@{extract\_soup}!catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{extract\_soup()}{extract\_soup()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Policy\+Extractor.\+extract\+\_\+soup (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{soup\+\_\+id,  }\item[{}]{policy\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Extract policy information for a specific policy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em soup\+\_\+id} & The Beautiful\+Soup object to extract data from \\
+\hline
+{\em policy\+\_\+id} & The id of the policy from the url parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Return}
+(Dict)\+: The policy object for that specific page 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_acddd4ecd973d39613bae93a6b33e8247}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_acddd4ecd973d39613bae93a6b33e8247}} 
+\index{catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}!get\_policy\_ids@{get\_policy\_ids}}
+\index{get\_policy\_ids@{get\_policy\_ids}!catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{get\_policy\_ids()}{get\_policy\_ids()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Policy\+Extractor.\+get\+\_\+policy\+\_\+ids (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Gets a list of all links of the type \char`\"{}\+Policy Details\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+
+
+List List of (index in df, link) of core links courses 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a7a8f8b1a8ada4d2c9b63ad08184ca365}\label{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor_a7a8f8b1a8ada4d2c9b63ad08184ca365}} 
+\index{catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}!toString@{toString}}
+\index{toString@{toString}!catalog\_engine.generator\_deprecated.PolicyExtractor@{catalog\_engine.generator\_deprecated.PolicyExtractor}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Policy\+Extractor.\+to\+String (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+From crawl data, generate the html string to be written to file. 
+
+@\+Params\+: @\+Return\+: (str)\+: String of the data 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/catalog\+\_\+engine/generator\+\_\+deprecated.\+py\end{DoxyCompactItemize}

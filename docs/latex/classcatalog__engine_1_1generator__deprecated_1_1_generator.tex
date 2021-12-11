@@ -1,0 +1,148 @@
+\hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator}{}\doxysection{catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Generator Class Reference}
+\label{classcatalog__engine_1_1generator__deprecated_1_1_generator}\index{catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}}
+
+
+\mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator}{Generator}} class.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a4f6712e53eba7b5bfdd7375743158113}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a4f6712e53eba7b5bfdd7375743158113}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_course_extractor}{Course\+Extractor}} course\+Extractor, \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_policy_extractor}{Policy\+Extractor}} policy\+Extractor, \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_course_explorer}{Course\+Explorer}} courses\+Explorer)
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator_a25721affe8072428426f48f8f1470e8d}{gen\+\_\+subject}} (self, Dict subject)
+\begin{DoxyCompactList}\small\item\em Generate a single subject. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_af98add717aeb44b093e89aadd67c3bbe}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_af98add717aeb44b093e89aadd67c3bbe}} 
+def {\bfseries gen\+\_\+all\+\_\+subjects} (self)
+\item 
+str \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator_ace4fe610caab9df705281facb6d421d9}{gen\+\_\+course}} (self, Dict info)
+\item 
+str \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator_a4dc3809fcc4a5e6ffe223730ea67c214}{gen\+\_\+all\+\_\+courses}} (self, List course\+\_\+list)
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator_a87338c852795ccb10d1faead792e3fa7}{gen\+\_\+policy}} (self, Dict info)
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a737c47e8686b9646b30ea42a2169cd8c}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a737c47e8686b9646b30ea42a2169cd8c}} 
+def {\bfseries gen\+\_\+all\+\_\+policies} (self)
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator_a66c4b24b42631309c1c42b95edc14be3}{generate\+\_\+json\+\_\+from\+\_\+data}} (self, str filename, cont=False)
+\begin{DoxyCompactList}\small\item\em Write a JSON file. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator_a94a15d0d3df560daec848b9c931b0367}{generate\+\_\+html\+\_\+from\+\_\+data}} (self, str filename)
+\begin{DoxyCompactList}\small\item\em Write html file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_aa91af9dce5022a0dd23727e277f6074d}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_aa91af9dce5022a0dd23727e277f6074d}} 
+{\bfseries pE}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a0a3a66c9c5c8a47c7f6bdd8a98e79267}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a0a3a66c9c5c8a47c7f6bdd8a98e79267}} 
+{\bfseries cE}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a5a3c3db7c9871ca253d317088cc691ec}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a5a3c3db7c9871ca253d317088cc691ec}} 
+{\bfseries c\+\_\+explore}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classcatalog__engine_1_1generator__deprecated_1_1_generator}{Generator}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a4dc3809fcc4a5e6ffe223730ea67c214}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a4dc3809fcc4a5e6ffe223730ea67c214}} 
+\index{catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}!gen\_all\_courses@{gen\_all\_courses}}
+\index{gen\_all\_courses@{gen\_all\_courses}!catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}}
+\doxysubsubsection{\texorpdfstring{gen\_all\_courses()}{gen\_all\_courses()}}
+{\footnotesize\ttfamily  str catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Generator.\+gen\+\_\+all\+\_\+courses (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{List}]{course\+\_\+list }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em course\+\_\+list} & list of course, each course is a dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str html string of all courses in one subject 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_ace4fe610caab9df705281facb6d421d9}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_ace4fe610caab9df705281facb6d421d9}} 
+\index{catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}!gen\_course@{gen\_course}}
+\index{gen\_course@{gen\_course}!catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}}
+\doxysubsubsection{\texorpdfstring{gen\_course()}{gen\_course()}}
+{\footnotesize\ttfamily  str catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Generator.\+gen\+\_\+course (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Dict}]{info }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & a dictionary of a single course \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str the html string of that single course 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a87338c852795ccb10d1faead792e3fa7}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a87338c852795ccb10d1faead792e3fa7}} 
+\index{catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}!gen\_policy@{gen\_policy}}
+\index{gen\_policy@{gen\_policy}!catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}}
+\doxysubsubsection{\texorpdfstring{gen\_policy()}{gen\_policy()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Generator.\+gen\+\_\+policy (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Dict}]{info }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & the dictionary containing policy information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Return}
+(str)\+: The html string for a single policy 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a25721affe8072428426f48f8f1470e8d}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a25721affe8072428426f48f8f1470e8d}} 
+\index{catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}!gen\_subject@{gen\_subject}}
+\index{gen\_subject@{gen\_subject}!catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}}
+\doxysubsubsection{\texorpdfstring{gen\_subject()}{gen\_subject()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Generator.\+gen\+\_\+subject (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{Dict}]{subject }\end{DoxyParamCaption})}
+
+
+
+Generate a single subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & the dictionary of the subject to be generated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(str)\+: html string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a94a15d0d3df560daec848b9c931b0367}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a94a15d0d3df560daec848b9c931b0367}} 
+\index{catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}!generate\_html\_from\_data@{generate\_html\_from\_data}}
+\index{generate\_html\_from\_data@{generate\_html\_from\_data}!catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}}
+\doxysubsubsection{\texorpdfstring{generate\_html\_from\_data()}{generate\_html\_from\_data()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Generator.\+generate\+\_\+html\+\_\+from\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{filename }\end{DoxyParamCaption})}
+
+
+
+Write html file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file\+\_\+path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcatalog__engine_1_1generator__deprecated_1_1_generator_a66c4b24b42631309c1c42b95edc14be3}\label{classcatalog__engine_1_1generator__deprecated_1_1_generator_a66c4b24b42631309c1c42b95edc14be3}} 
+\index{catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}!generate\_json\_from\_data@{generate\_json\_from\_data}}
+\index{generate\_json\_from\_data@{generate\_json\_from\_data}!catalog\_engine.generator\_deprecated.Generator@{catalog\_engine.generator\_deprecated.Generator}}
+\doxysubsubsection{\texorpdfstring{generate\_json\_from\_data()}{generate\_json\_from\_data()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+generator\+\_\+deprecated.\+Generator.\+generate\+\_\+json\+\_\+from\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{filename,  }\item[{}]{cont = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+Write a JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & file\+\_\+path cont (bool, optional)\+: Whether to concatenate or not. Defaults to False. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/catalog\+\_\+engine/generator\+\_\+deprecated.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,133 @@
+\hypertarget{classcatalog__engine_1_1scraper_1_1_scraper}{}\doxysection{catalog\+\_\+engine.\+scraper.\+Scraper Class Reference}
+\label{classcatalog__engine_1_1scraper_1_1_scraper}\index{catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}}
+
+
+The scraper class will crawl all data from link.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1scraper_1_1_scraper_a719a4bf7122f8541cb044f64991863c2}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, csv\+\_\+path, data\+\_\+path=\textquotesingle{}./data/\textquotesingle{}, flag=\textquotesingle{}courses\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Description. \end{DoxyCompactList}\item 
+List\mbox{[}bs4.\+Beautiful\+Soup\mbox{]} \mbox{\hyperlink{classcatalog__engine_1_1scraper_1_1_scraper_a97cf5e58867ffe958e97d5b6f33aa331}{scrape\+\_\+src}} (self, data\+\_\+path\+\_\+html=None)
+\begin{DoxyCompactList}\small\item\em Scrape every link from the csv file. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1scraper_1_1_scraper_a503fdda6a4ee9b9cff544429d56ee10e}{request\+\_\+json\+\_\+from\+\_\+api}} (self, str url)
+\begin{DoxyCompactList}\small\item\em \mbox{[}summary\mbox{]} \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1scraper_1_1_scraper_af3ffddc023b4454d5534a08aa3850900}{set\+\_\+verbose}} (self, v)
+\begin{DoxyCompactList}\small\item\em Debugger. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classcatalog__engine_1_1scraper_1_1_scraper_ad21c619b5afd5014afc9a835d5daade4}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em From crawl data, generate the html string to be written to file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a94f8629bd27aec184c79cd3d74dae841}\label{classcatalog__engine_1_1scraper_1_1_scraper_a94f8629bd27aec184c79cd3d74dae841}} 
+{\bfseries flag}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a92f6b5a639d6a41791b44434fb8aaaee}\label{classcatalog__engine_1_1scraper_1_1_scraper_a92f6b5a639d6a41791b44434fb8aaaee}} 
+{\bfseries csv\+\_\+path}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a9e4490549cbe5a4800e3d50acd06fca9}\label{classcatalog__engine_1_1scraper_1_1_scraper_a9e4490549cbe5a4800e3d50acd06fca9}} 
+{\bfseries mapper}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a1593a3c4e5e7c1a0338819e837404242}\label{classcatalog__engine_1_1scraper_1_1_scraper_a1593a3c4e5e7c1a0338819e837404242}} 
+{\bfseries VERBOSE}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a76eba62103d3d984c44138d524fa0511}\label{classcatalog__engine_1_1scraper_1_1_scraper_a76eba62103d3d984c44138d524fa0511}} 
+{\bfseries df}
+\item 
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a45bf4992fb728f99f4311218cb1425a4}\label{classcatalog__engine_1_1scraper_1_1_scraper_a45bf4992fb728f99f4311218cb1425a4}} 
+{\bfseries soup}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The scraper class will crawl all data from link. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a719a4bf7122f8541cb044f64991863c2}\label{classcatalog__engine_1_1scraper_1_1_scraper_a719a4bf7122f8541cb044f64991863c2}} 
+\index{catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+scraper.\+Scraper.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{csv\+\_\+path,  }\item[{}]{data\+\_\+path = {\ttfamily \textquotesingle{}./data/\textquotesingle{}},  }\item[{}]{flag = {\ttfamily \textquotesingle{}courses\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em csv\+\_\+path} & The path to the csv file that contains all link. There are two flags for the scraper to know which folder to store data in! \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_ad21c619b5afd5014afc9a835d5daade4}\label{classcatalog__engine_1_1scraper_1_1_scraper_ad21c619b5afd5014afc9a835d5daade4}} 
+\index{catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+scraper.\+Scraper.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+From crawl data, generate the html string to be written to file. 
+
+\begin{DoxyReturn}{Returns}
+
+
+str String of the data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a503fdda6a4ee9b9cff544429d56ee10e}\label{classcatalog__engine_1_1scraper_1_1_scraper_a503fdda6a4ee9b9cff544429d56ee10e}} 
+\index{catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}!request\_json\_from\_api@{request\_json\_from\_api}}
+\index{request\_json\_from\_api@{request\_json\_from\_api}!catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}}
+\doxysubsubsection{\texorpdfstring{request\_json\_from\_api()}{request\_json\_from\_api()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+scraper.\+Scraper.\+request\+\_\+json\+\_\+from\+\_\+api (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{str}]{url }\end{DoxyParamCaption})}
+
+
+
+\mbox{[}summary\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & \mbox{[}description\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_a97cf5e58867ffe958e97d5b6f33aa331}\label{classcatalog__engine_1_1scraper_1_1_scraper_a97cf5e58867ffe958e97d5b6f33aa331}} 
+\index{catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}!scrape\_src@{scrape\_src}}
+\index{scrape\_src@{scrape\_src}!catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}}
+\doxysubsubsection{\texorpdfstring{scrape\_src()}{scrape\_src()}}
+{\footnotesize\ttfamily  List\mbox{[}bs4.\+Beautiful\+Soup\mbox{]} catalog\+\_\+engine.\+scraper.\+Scraper.\+scrape\+\_\+src (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{data\+\_\+path\+\_\+html = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Scrape every link from the csv file. 
+
+\begin{DoxyReturn}{Returns}
+
+
+List \mbox{[}description\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcatalog__engine_1_1scraper_1_1_scraper_af3ffddc023b4454d5534a08aa3850900}\label{classcatalog__engine_1_1scraper_1_1_scraper_af3ffddc023b4454d5534a08aa3850900}} 
+\index{catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}!set\_verbose@{set\_verbose}}
+\index{set\_verbose@{set\_verbose}!catalog\_engine.scraper.Scraper@{catalog\_engine.scraper.Scraper}}
+\doxysubsubsection{\texorpdfstring{set\_verbose()}{set\_verbose()}}
+{\footnotesize\ttfamily def catalog\+\_\+engine.\+scraper.\+Scraper.\+set\+\_\+verbose (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{v }\end{DoxyParamCaption})}
+
+
+
+Debugger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Whether the debugger mode is on or off. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/catalog\+\_\+engine/\mbox{\hyperlink{scraper_8py}{scraper.\+py}}\end{DoxyCompactItemize}
